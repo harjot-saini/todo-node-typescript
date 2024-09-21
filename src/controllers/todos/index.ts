@@ -14,11 +14,12 @@ const getTodos = async (req: Request, res: Response): Promise<void> => {
 
 const addTodo = async (req: Request, res: Response): Promise<void> => {
   try {
-    const body = req.body as Pick<ITodo, 'name' | 'description' | 'status'>
+    const body = req.body as Pick<ITodo, 'name' | 'description' | 'status' |'priority'>
     const todo: ITodo = new Todo({
       name: body.name,
       description: body.description,
       status: body.status,
+      priority:body.priority,
     })
 
     const newTodo: ITodo = await todo.save()

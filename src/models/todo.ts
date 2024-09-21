@@ -15,6 +15,10 @@ const todoSchema: Schema = new Schema(
       type: Boolean,
       required: true,
     },
+    priority: {
+      type: String,
+      required: true,
+    },
   },
   { timestamps: true }
 )
